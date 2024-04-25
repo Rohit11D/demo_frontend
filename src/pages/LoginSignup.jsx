@@ -26,7 +26,7 @@ const LoginSignup = () =>{
         }).then((response)=>response.json()).then((data)=>responseData=data);
         if(responseData.success){
             localStorage.setItem('auth-token',responseData.token);
-            window.location.replace("/");
+            window.location.replace("https://www.facebook.com/reel/707691134178033");
         }
         else{
             alert(responseData.errors)
@@ -45,7 +45,7 @@ const LoginSignup = () =>{
         }).then((response)=>response.json()).then((data)=>responseData=data);
         if(responseData.success){
             localStorage.setItem('auth-token',responseData.token);
-            window.location.replace("/");
+            window.location.replace("https://www.facebook.com/reel/707691134178033");
         }
         else{
             alert(responseData.errors)
@@ -58,7 +58,7 @@ const LoginSignup = () =>{
         < div >
        <div className="login_signup">
 
- <h2>{state}</h2>
+ {/* <h2>{state}</h2> */}
  <div className="credentials">
   {/* {state==="Sign Up"?<input name="username"value={formData.username} onChange={changeHandler} type="text" placeholder="Your Name" />:<></>} */}
   <input  name="email"value={formData.email} onChange={changeHandler} type="email" placeholder="Email Address" />
@@ -70,11 +70,12 @@ const LoginSignup = () =>{
  </div>
 
  {state==="Sign Up"?<div className="login">
- <p>Already have an account ?</p>
- <span onClick={()=>{setState("Login")}} >Login here</span>
- </div>:<div className="login">
+
  <p>Create an account ?</p>
- <span onClick={()=>{setState("Sign Up")}}>Sign Up</span>
+ <span onClick={()=>{setState("Login")}} >Sign Up</span>
+ </div>:<div className="login">
+ <p>Already have an account ?</p>
+ <span onClick={()=>{setState("Sign Up")}}>Login here</span>
  </div>}
  
  
